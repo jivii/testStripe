@@ -28,7 +28,8 @@ const stripeTokenHandler = token => {
 // Create token from card data
 form.addEventListener('submit', e => {
   e.preventDefault();
-
+  
+  console.log('wertyui');
   stripe.createToken(card).then(res => {
     if (res.error) errorEl.textContent = res.error.message;
     else stripeTokenHandler(res.token);
